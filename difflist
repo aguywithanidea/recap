@@ -1,0 +1,14 @@
+.gitignore
+Gemfile
+Rakefile
+app/
+bin/
+config.ru
+config/
+db/
+difflist
+lib/
+log/
+public/
+test/
+vendor/
