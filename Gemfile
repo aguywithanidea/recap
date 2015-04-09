@@ -1,15 +1,16 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+# Don't update to 4.2.1 until this is fixed re: devise https://github.com/plataformatec/devise/issues/3158
 gem 'rails', '4.2.1'
 # Use sqlite3 as the database for Active Record
 gem 'pg'
 
 # gem 'sqlite3'
 # Use SCSS for stylesheets
-gem 'bootstrap-sass', '~> 3.3.4'
-# gem 'sass-rails', '>= 3.2'
-gem 'sass-rails', '~> 5.0'
+# gem 'bootstrap-sass', '~> 3.3.4'
+# # gem 'sass-rails', '>= 3.2'
+# gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 # gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -20,6 +21,9 @@ gem 'sass-rails', '~> 5.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
+# Authentication
+# https://github.com/plataformatec/devise
+gem 'devise', '3.4.1'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 # gem 'turbolinks'
