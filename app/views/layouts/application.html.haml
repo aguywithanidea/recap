@@ -15,14 +15,20 @@
           %span.icon-bar
           %span.icon-bar
           %span.icon-bar
-        %a.brand{href:"#"} recap
+        %a.navbar-brand{href:"#"} recap
 
       .collapse.navbar-collapse{id:"navbar-collapse"}
-        %p.navbar-text.navbar-right Signed in as username
         %ul.nav.navbar-nav
-          %li.active Home
-          %li About
-          %li Contact
+          %li.active 
+            %a{href:'#'} Home
+          %li 
+            %a{href:'#'} About
+          %li 
+            %a{href:'#'} Contact
+        %p.navbar-text.navbar-right
+          Signed in as 
+          %a.navbar-link{href:'#'} 
+            username
 
   -# Primary content area
   .container-fluid
