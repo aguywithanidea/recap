@@ -1,15 +1,49 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Recap</title>
-  <%# = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%# = javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-<%= yield %>
+!!!5
+%head
+  %title Recap
+  = stylesheet_link_tag    'application', media: 'all'
+  = javascript_include_tag 'application'
+  = csrf_meta_tags
 
-</body>
-</html>
+%body
+  -# Navbar
+  %nav.navbar.navbar-default.navbar-fixed-top
+    .container-fluid
+      .navbar-header
+        %button.navbar-toggle.collapsed{type:"button",data:{toggle:"collapse",target:"#navbar-collapse"}}
+          %span.sr-only Toggle navigation
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        %a.brand{href:"#"} recap
+
+      .collapse.navbar-collapse{id:"navbar-collapse"}
+        %p.navbar-text.navbar-right Signed in as username
+        %ul.nav.navbar-nav
+          %li.active Home
+          %li About
+          %li Contact
+
+  -# Primary content area
+  .container-fluid
+    .row
+      -# Side-Nav box
+      .col-xs-3
+        .well.sidebar-nav
+          %ul.nav.nav-list
+            %li.nav-header Sidebar
+            %li.active Link 1
+            %li Link 2
+            %li.nav-header Sidebar2 
+            %li Link 3
+            %li Link 4
+            %li Link 5
+          </ul>
+      -# Primary content screen
+      .col-xs-9
+        .notice
+          = notice
+        .alert
+          = alert
+
+        = yield

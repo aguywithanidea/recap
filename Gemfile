@@ -1,25 +1,25 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-# Don't update to 4.2.1 until this is fixed re: devise https://github.com/plataformatec/devise/issues/3158
 gem 'rails', '4.2.1'
 # Use sqlite3 as the database for Active Record
 gem 'pg'
 
 # gem 'sqlite3'
 # Use SCSS for stylesheets
-# gem 'bootstrap-sass', '~> 3.3.4'
-# # gem 'sass-rails', '>= 3.2'
-# gem 'sass-rails', '~> 5.0'
+gem 'bootstrap-sass', '~> 3.3.4'
+# gem 'sass-rails', '>= 3.2'
+gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
-# gem 'uglifier', '>= 1.3.0'
+gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 # gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails'
+gem 'jquery-rails', '4.0.3'
+gem 'haml', '4.0.6'
 
 # Authentication
 # https://github.com/plataformatec/devise
