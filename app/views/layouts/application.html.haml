@@ -19,7 +19,7 @@
 
       .collapse.navbar-collapse{id:"navbar-collapse"}
         %ul.nav.navbar-nav
-          %li{:class => nav_bar_current?(root_path)}
+          %li{:class => nav_bar_current?(notes_path)}
             =link_to 'Notes', notes_path
           %li{:class => nav_bar_current?(members_path)} 
             =link_to 'Members', members_path
@@ -46,10 +46,5 @@
             %li Link 5
           </ul>
       -# Primary content screen
-      .col-xs-9.col-md-10
-        .notice
-          = notice
-        .alert
-          = alert
-
+      .col-md-10.col-md-offset-1
         = yield
