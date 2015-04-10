@@ -19,11 +19,12 @@ Rails.application.routes.draw do
   #   resources :products
 
   # Example resource route with options:
+  resources :notes
   resources :members do
-    member do
-      get '/', action: :index
-      # post 'toggle'
-    end
+    # member do
+    #   get '/', action: :index
+    #   # post 'toggle'
+    # end
 
     # collection do
     #   get 'sold'

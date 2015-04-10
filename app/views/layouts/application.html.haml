@@ -1,6 +1,6 @@
 !!!5
 %head
-  %title Recap
+  %title recap
   = stylesheet_link_tag    'application', media: 'all'
   = javascript_include_tag 'application'
   = csrf_meta_tags
@@ -19,11 +19,11 @@
 
       .collapse.navbar-collapse{id:"navbar-collapse"}
         %ul.nav.navbar-nav
-          %li.active 
-            %a{href:'#'} Home
-          %li 
-            %a{href:'#'} About
-          %li 
+          %li{:class => nav_bar_current?(root_path)}
+            =link_to 'Notes', notes_path
+          %li{:class => nav_bar_current?(members_path)} 
+            =link_to 'Members', members_path
+          -#%li 
             %a{href:'#'} Contact
         %p.navbar-text.navbar-right
           Signed in as 
