@@ -24,7 +24,7 @@ class MembersController < ApplicationController
     @member = Member.new(member_params)
 
     if @member.save
-      redirect_to @member, notice: 'Member was successfully created.'
+      redirect_to members_path, notice: "#{@member.name} successfully added." and return
     else
       render :new
     end
@@ -33,7 +33,7 @@ class MembersController < ApplicationController
   # PATCH/PUT /members/1
   def update
     if @member.update(member_params)
-      redirect_to @member, notice: 'Member was successfully updated.'
+      redirect_to members_path, notice:  "#{@member.name} successfully updated." and return
     else
       render :edit
     end

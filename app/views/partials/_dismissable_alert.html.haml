@@ -1,0 +1,11 @@
+- klass ||= nil
+- emphasis ||= nil
+- message ||= nil
+
+- if klass.present? && message.present?
+  .alert{class:"alert-#{klass}"}
+    =link_to(raw('&times;'),'#', {class:'close',data:{dismiss:'alert'}})
+    - if emphasis
+      %strong 
+        = emphasis
+    = message

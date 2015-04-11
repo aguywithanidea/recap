@@ -1,25 +1,13 @@
-<%= form_for(@member) do |f| %>
-  <% if @member.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@member.errors.count, "error") %> prohibited this member from being saved:</h2>
+= form_for(@member, html: {class:'form-inline'}) do |f|
+  - if @member.errors.any? 
+    = render '/partials/standard_form_errors', locals: {errors: @member.errors}
 
-      <ul>
-      <% @member.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  .form-group
+    = f.label :name, class:'sr-only'
+    = f.text_field :name, class:'form-control', placeholder:'Member Name'
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+  .form-group
+    = f.label :email, class:'sr-only'
+    = f.text_field :email, class:'form-control', placeholder:'Email Address'
+
+  %button.btn.btn-info{type:'submit'} Submit
