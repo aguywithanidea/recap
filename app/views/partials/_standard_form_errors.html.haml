@@ -1,9 +1,9 @@
 - errors ||= []
 - if errors.count > 0
-  #error_explanation
-    %h2
-      #{pluralize(errors.count, 'error')} prevents this from being saved:
-
+  - emp = "#{pluralize(errors.count, 'error')} found:"
+  - msg = capture_haml do
     %ul
-    - errors.full_messages.each do |err|
-      %li= err
+      - errors.full_messages.each do |err|
+        %li= err
+
+  = render partial: '/partials/dismissable_alert', locals:{klass:'danger',emphasis:emp,message:msg}

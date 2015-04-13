@@ -24,10 +24,10 @@ class NotesController < ApplicationController
     @note = Note.new(note_params)
     @note.user_id = current_user.id
     if @note.save
-      Rails.logger.debug("saved")
       redirect_to @note, notice: 'Note was successfully created.'
+# want rapid-fire note-taking, so we just update and move on
+      # redirect_to notes_path, notice:  "#{@member.name} successfully updated." and return
     else
-      Rails.logger.debug("error : #{@note.errors.inspect}")
       render :new
     end
   end
@@ -35,7 +35,7 @@ class NotesController < ApplicationController
   # PATCH/PUT /notes/1
   def update
     if @note.update(note_params)
-      redirect_to @note, notice: 'Note was successfully updated.'
+      redirect_to notes_path, notice:  "#{@note.member.name} note successfully updated." and return
     else
       render :edit
     end
