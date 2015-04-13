@@ -3,7 +3,7 @@ class NotesController < ApplicationController
 
   # GET /notes
   def index
-    @notes = Note.all
+    @notes = Note.all.reverse
   end
 
   # GET /notes/1
@@ -13,7 +13,7 @@ class NotesController < ApplicationController
   # GET /notes/new
   def new
     @note = Note.new
-    @current = Note.today_by_user(current_user.id)
+    @current = Note.today_by_user(current_user.id).reverse
   end
 
   # GET /notes/1/edit
@@ -22,10 +22,13 @@ class NotesController < ApplicationController
 
   # POST /notes
   def create
-    @note = Note.new(note_params)
-    @note.user_id = current_user.id
-    if @note.save
-      redirect_to @note, notice: 'Note was successfully created.'
+    note = Note.new(note_params)
+    note.user_id = current_user.id
+    if note.save
+      @note = note.dup
+      @note.note = nil # nill out the note part
+      @current = Note.today_by_user(current_user.id).reverse
+      render :new 
 # want rapid-fire note-taking, so we just update and move on
       # redirect_to notes_path, notice:  "#{@member.name} successfully updated." and return
     else

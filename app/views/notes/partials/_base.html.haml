@@ -12,6 +12,6 @@
 
   .form-group
     = f.label :note, class:'sr-only'
-    = f.text_field :note, class:'form-control input-lg', style:'width:650px;', placeholder:'Note'
+    = f.text_field :note, class:'form-control input-lg', style:'width:650px;', placeholder:'Note', autofocus: true 
 
   %button.btn.btn-info{type:'submit'} Submit
