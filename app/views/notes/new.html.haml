@@ -1,6 +1,9 @@
-<h1>New Note</h1>
+%h1 Add Note
 
-<%= render '/notes/partials/base' %>
+= render '/notes/partials/base'
+= link_to 'Back', notes_path
+%br
+%br
+%br
 
-
-<%= link_to 'Back', notes_path %>
+= render partial: '/notes/partials/current', locals:{set:@current}

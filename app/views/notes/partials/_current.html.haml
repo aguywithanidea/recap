@@ -1,0 +1,6 @@
+- set ||= []
+- if set.present?
+  .panel.panel-info
+    .panel-heading Current Notes
+    = render partial: '/notes/partials/set', locals:{set:set}
+  
