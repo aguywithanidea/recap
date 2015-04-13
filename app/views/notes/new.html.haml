@@ -1,9 +1,9 @@
-%h1 Add Note
+- @nav_here = notes_path
+
+%h1 Add a Note
 
 = render '/notes/partials/base'
-= link_to 'Back', notes_path
-%br
-%br
+
 %br
 
 = render partial: '/notes/partials/current', locals:{set:@current}

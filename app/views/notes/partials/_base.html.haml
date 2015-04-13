@@ -8,10 +8,10 @@
 
   .form-group
     = f.label :note_tag_id, class:'sr-only'
-    = f.select(:note_tag_id, Note::Tag.all.collect {|p| [ p.name, p.id ] }, { include_blank: false, prompt:'Type' }, class:'input-lg')
+    = f.select(:note_tag_id, Note::Tag.all.collect {|p| [ p.name.humanize.titleize, p.id ] }, { include_blank: false, prompt:'Type' }, class:'input-lg')
 
   .form-group
     = f.label :note, class:'sr-only'
-    = f.text_field :note, class:'form-control input-lg', style:'width:650px;', placeholder:'Note', autofocus: true 
+    = f.text_field :note, class:'form-control input-lg', style:'width:700px;', placeholder:'Note', autofocus: true 
 
   %button.btn.btn-info{type:'submit'} Submit

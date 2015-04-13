@@ -32,6 +32,7 @@ class NotesController < ApplicationController
 # want rapid-fire note-taking, so we just update and move on
       # redirect_to notes_path, notice:  "#{@member.name} successfully updated." and return
     else
+      @note = note
       render :new
     end
   end
