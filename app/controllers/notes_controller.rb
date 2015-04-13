@@ -24,8 +24,10 @@ class NotesController < ApplicationController
     @note = Note.new(note_params)
     @note.user_id = current_user.id
     if @note.save
+      Rails.logger.debug("saved")
       redirect_to @note, notice: 'Note was successfully created.'
     else
+      Rails.logger.debug("error : #{@note.errors.inspect}")
       render :new
     end
   end
