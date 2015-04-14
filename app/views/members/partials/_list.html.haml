@@ -1,0 +1,15 @@
+- member ||= nil
+- if member.present?
+  %tr
+    %td= member.name
+    %td= member.email
+    %td= member.notes.count
+    %td
+      - if member.id # we might want to change this to members over whom I have edit capabilities
+        %a{href:edit_member_path(member), title:'Edit'}
+          %span.glyphicon.glyphicon-pencil{"aria-hidden"=>true}
+        &nbsp;
+        -#%a{href:note_path(note), data: { confirm: 'Are you sure?', method: 'delete' }, rel:'nofollow', title:'Delete'}
+          %span.glyphicon.glyphicon-trash{"aria-hidden"=>true}
+      - else
+        &nbsp;
