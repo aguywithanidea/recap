@@ -13,8 +13,5 @@ module NotesHelper
       klass = 'success'
     end
     content_tag(:button, str.humanize.titleize, class:"btn btn-#{klass} btn-xs")
-    # content_tag(:h4, 
-      # content_tag(:span, str.humanize.titleize, class:"label label-#{klass}")
-    # )
   end
 end
