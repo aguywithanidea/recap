@@ -1,0 +1,7 @@
+= render '/partials/notice'
+
+%h1 Members
+
+= render partial: '/members/partials/set', locals:{set:@members}
+
+=link_to( 'New Member', new_member_path, {class:'btn btn-primary btn-lg', role:'button'})

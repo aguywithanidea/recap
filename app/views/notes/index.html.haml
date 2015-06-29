@@ -1,0 +1,7 @@
+= render '/partials/notice'
+
+%h1 Notes
+
+= render partial: '/notes/partials/set', locals:{set:@notes}
+
+=link_to( 'New Note', new_note_path, {class:'btn btn-primary btn-lg', role:'button'})

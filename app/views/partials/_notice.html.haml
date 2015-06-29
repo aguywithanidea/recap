@@ -1,0 +1,5 @@
+- if notice
+  = render partial: '/partials/dismissable_alert', locals:{klass:'success',emphasis:'Success!',message:notice}
+- if alert
+  = render partial: '/partials/dismissable_alert', locals:{klass:'danger',emphasis:'Error!',message:alert}
+

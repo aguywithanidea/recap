@@ -1,0 +1,9 @@
+- @nav_here = notes_path
+
+%h1 Add a Note
+
+= render '/notes/partials/base'
+
+%br
+
+= render partial: '/notes/partials/current', locals:{set:@current}

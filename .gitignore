@@ -22,3 +22,6 @@
 # Ignore foreman files
 /.env
 /.foreman
+
+# diff file is for local use
+/difflist

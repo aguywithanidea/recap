@@ -1,0 +1,43 @@
+.col-md-6.col-md-offset-3
+  %h2 Manage Account
+
+  = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: 'form-group' }) do |f|
+    = devise_error_messages!
+
+    - eklass = 'form-control'
+    -#= render partial: '/devise/shared/horizontal_form_input', locals:{elem: :email, opts: {autofocus: true}}
+  
+    .form-group.form-group-lg
+      = f.label :email
+      = f.email_field :email, autofocus: true, placeholder: 'Email', class: 'form-control'
+
+    - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+      .confirmation
+        Currently waiting confirmation for: #{ resource.unconfirmed_email }
+
+    .form-group.form-group-lg
+      = f.label :password
+      = f.password_field :password, autocomplete: "off", class: 'form-control'
+      %span.text-muted
+        leave blank if you don't want to change it
+      -# '  
+  
+    .form-group.form-group-lg
+      = f.label :password_confirmation
+      = f.password_field :password_confirmation, autocomplete: "off", class: 'form-control'
+  
+    .form-group.form-group-lg
+      = f.label :current_password
+      = f.password_field :current_password, autocomplete: "off", class: 'form-control'
+      %span.text-muted
+        we need your current password to confirm your changes
+    
+    .row
+      .col-md-8
+        %button.btn.btn-primary.btn-lg.col-xs-12{type:'submit'} 
+          Update
+      -#.col-md-4
+        %button.btn.btn-danger.btn-lg.col-xs-12{} 
+          Delete Account
+        -# needs to be similar to
+          = button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete

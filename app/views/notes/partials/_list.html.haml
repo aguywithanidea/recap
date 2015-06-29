@@ -1,0 +1,17 @@
+- note ||= nil
+- if note.present?
+  %tr
+    %td= note.member.name
+    %td= labelize(note.tag.name)
+    %td= note.note
+    %td
+      - if note.user_id == current_user.id
+        %a{href:edit_note_path(note), title:'Edit'}
+          %span.glyphicon.glyphicon-pencil{"aria-hidden"=>true}
+        &nbsp;
+        %a{href:note_path(note), data: { confirm: 'Are you sure?', method: 'delete' }, rel:'nofollow', title:'Delete'}
+          %span.glyphicon.glyphicon-trash{"aria-hidden"=>true}
+      - else
+        &nbsp;
+  
+  

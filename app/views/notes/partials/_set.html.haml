@@ -1,0 +1,13 @@
+- set ||= []
+- if set.present?
+  %table.table.table-striped{id:'note-list'}
+    %thead
+      %tr
+        %th Member
+        %th Tag
+        %th Note
+        %th
+
+    %tbody
+      - set.each do |note|
+        = render partial: '/notes/partials/list', locals:{note:note}
